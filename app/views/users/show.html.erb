@@ -1,0 +1,6 @@
+<% title "My Profile" %>
+
+<%= render @user %>
+
+<%= link_to "Edit Profile", edit_user_path(@user), class: "btn btn-primary"%>
+<%= link_to "Delete Profile", user_path(@user), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %><br><br>

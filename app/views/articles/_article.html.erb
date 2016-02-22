@@ -1,0 +1,4 @@
+<%= div_for article do %>
+	<h1 class="text-success"><strong>Title:</strong> <%= link_to_unless_current article.title, article %></h1>
+	<h1 class="text-success"><strong>Post:</strong> <%= article.post %></h1>
+<% end %>

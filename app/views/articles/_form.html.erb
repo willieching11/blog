@@ -1,0 +1,6 @@
+<%= bootstrap_form_for @article, remote: true do |f| %>
+	<%= f.alert_message "Please fix the errors below." %>
+	<h1 class="text-success"><%= f.text_field :title %></h1>
+	<h1 class="text-success"><%= f.text_area :post %></h1>
+	<%= f.primary %>
+<% end %>

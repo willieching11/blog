@@ -1,0 +1,25 @@
+<% title 'Listing Articles' %>
+<table>	
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Post</th>
+			<th colspan="3"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<div id = "articles">
+			<% @articles.each do |article| %> 
+				<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+					<td><%= article.title %><br></td>
+					<td><%= article.post %></td>
+					<td><%= link_to 'Show', article, class: "btn btn-primary" %></td>
+					<td><%= link_to 'Edit', edit_article_path(article),class: "btn btn-primary"  %></td>
+					<td><%= link_to 'Delete', article, method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger", remote:true %></td>
+				<tr>
+			<% end %>
+		</div>
+	</tbody>
+</table><br>
+<%= link_to  "New Article", new_article_path, class: "btn btn-success", id: "new_article", remote: true %>

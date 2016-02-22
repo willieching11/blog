@@ -1,0 +1,4 @@
+<%= div_for @comment do %>
+	 <h3><%= link_to_unless_current comment.commenter, article_comment_path(@article,@comment) %></h3>
+	<p><%= comment.context %></p>
+<% end%>

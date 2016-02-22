@@ -1,0 +1,28 @@
+body {
+    background-color: black;
+    background-image:url(http://www.abweb.com.au/images/banner-5.jpg), url(http://p1.pichost.me/i/5/1282860.jpg);
+    background-repeat: no-repeat, repeat;
+    background-attachment: initial, fixed;
+    background-position: relative, relative;
+    background-size: 100% 175px, cover;
+    text-align: center;
+    padding: 15px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    display: inline;
+}
+
+
+h1 {
+  padding: 40px 50px;
+  text-align: center;
+}
+

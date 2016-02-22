@@ -1,0 +1,7 @@
+<%title 'Reset Password' %>
+
+<%= bootstrap_form_for @user, url: password_reset_path(params[:id]) do |f| %>
+	<body class="text-success"><%= f.password_field :password %>
+	<%= f.password_field :password_confrimation %>
+	<%= f.primary 'Set New Password'%></body>
+<%end %>

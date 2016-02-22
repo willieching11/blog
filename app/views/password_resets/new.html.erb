@@ -1,0 +1,6 @@
+<% title "Forgot Password"%>
+
+<%= bootstrap_form_tag url: password_resets_path, method: :post do |f| %>
+	<%= f.email_field :email %>
+	<%= f.primary 'Send Reset Email' %>
+<% end %>

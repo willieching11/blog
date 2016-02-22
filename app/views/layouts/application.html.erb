@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<%= link_to "Blog", root_path, class: "navbar-brand"%>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<%= nav_link "Home", root_path %>
+				<%= nav_link "About", about_path %>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<% if current_user %>
+					<%= nav_link current_user.name, user_path(current_user) %>
+					<%= nav_link "Logout", logout_path %>
+				<% else %>
+					<%= nav_link "Login", login_path %>
+					<%= nav_link "Sign Up", sign_up_path %>
+					<%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+				<% end%>
+			</ul>
+		</div>
+	</div>
+</nav>
+<br><br>
+<% if show_title? %>
+<div class="container-fluid">
+		<h1 class="text-success"><%= yield(:title) %></h1>
+</div>
+<% end %>
+<div class="container-fluid">
+	<div id="flash-messages" class="row">
+		<% flash.each do |name, msg| %>
+			<div class="alert alert-<%= name == "notice" ? 'success' : 'danger' %> alert-dismissable">
+				<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				<%= msg %>
+			</div>
+		<% end %>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+			<%= yield %>
+		</div>
+	</div>
+</div>
+</body>
+</html>

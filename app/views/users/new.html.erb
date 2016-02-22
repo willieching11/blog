@@ -1,0 +1,10 @@
+<% title 'Sign Up' %></h1>
+
+<%= bootstrap_form_for @user do |f| %>
+	<body class="text-success"><%= f.alert_message "Please fix the errors below."%>
+	<%= f.text_field :name %>
+	<%= f.email_field :email %>
+	<%= f.password_field :password %>
+	<%= f.password_field :password_confirmation, label: "Confirm Password" %></body>
+	<%= f.primary "Sign Up" %>
+<% end %>

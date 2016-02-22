@@ -1,0 +1,15 @@
+<% title @article.title %>
+
+<%= render @article %>
+
+<%= link_to "Edit Article", edit_article_path(@article), class: "btn btn-primary"%>
+<%= link_to "Delete Article", article_path(@article), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-danger" %><br><br>
+
+<%= link_to "Back", articles_path, class: "btn btn-info" %><br><br>
+<h2 class="text-success">Comments</h2>
+
+<%= render @article.comments %>
+
+
+<%= render 'comments/form'%>
+
